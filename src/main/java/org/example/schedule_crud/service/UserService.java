@@ -28,7 +28,7 @@ public class UserService {
        List<User> users = userRepository.findAll();
        List<UserResponseDto> dtos = new ArrayList<>();
         for (User user : users) {
-            dtos.add(new UserResponseDto(user.getId(), user.getName(), user.getEmail(), user.getCreatedAte(), user.getModifiedAte());
+            dtos.add(new UserResponseDto(user.getId(), user.getName(), user.getEmail(), user.getCreatedAte(), user.getModifiedAte(), user.getPassword()));
         }
         return dtos;
     }
@@ -37,7 +37,7 @@ public class UserService {
         User user = UserRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("none")
         );
-        return new UserResponseDto(user.getId(), user.getName(), user.getEmail(), user.getCreatedAte(), user.getModifiedAte());
+        return new UserResponseDto(user.getId(), user.getName(), user.getEmail(), user.getCreatedAte(), user.getModifiedAte(), user.getPassword());
     }
     @Transactional
     public UserResponseDto update(Long id, UserResponseDto dto) {
@@ -45,7 +45,7 @@ public class UserService {
                 () -> new IllegalArgumentException("none")
         );
         user.update(dto.getModifiedAte());
-        return new UserResponseDto(user.getId(), user.getName(), user.getEmail(), user.getCreatedAte(), user.getModifiedAte());
+        return new UserResponseDto(user.getId(), user.getName(), user.getEmail(), user.getCreatedAte(), user.getModifiedAte(), user.getPassword());
     }
     @Transactional
     public void deleteById(Long id) {

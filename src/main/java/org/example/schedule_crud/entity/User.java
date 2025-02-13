@@ -19,11 +19,13 @@ public class User {
     private String email;
     private LocalDateTime createdAte;
     private LocalDateTime modifiedAte;
+    private String password;
 
-    public User(String name) {
+    public User(String name, String email, LocalDateTime createdAte, LocalDateTime modifiedAte, String password) {
         this.name = name;
         this.email = email;
         this.createdAte = createdAte;
         this.modifiedAte = modifiedAte;
+        this.password = password;
     }
 }
