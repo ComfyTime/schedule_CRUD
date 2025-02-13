@@ -14,6 +14,7 @@
 |일정 삭제|DELETE|/userss/{id}|
 
 ## ERD
+![ERD Example - ATM](https://github.com/user-attachments/assets/e168795d-f1f4-412c-bfb8-7f231bdf5db0)
 
 ## LV0
 ### 설명
